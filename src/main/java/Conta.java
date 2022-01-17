@@ -1,38 +1,14 @@
+import lombok.Data;
+import lombok.NonNull;
+
+@Data
 public abstract class Conta {
 
+    @NonNull
     private String agencia;
+    @NonNull
     private String conta;
-    private Double saldo;
-
-    public Conta(String agencia, String conta) {
-        this.agencia = agencia;
-        this.conta = conta;
-        this.saldo = 0d;
-    }
-
-    public String getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(String agencia) {
-        this.agencia = agencia;
-    }
-
-    public String getConta() {
-        return conta;
-    }
-
-    public void setConta(String conta) {
-        this.conta = conta;
-    }
-
-    public Double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(Double saldo) {
-        this.saldo = saldo;
-    }
+    private Double saldo = 0d;
 
     public void depositar(Double valor) throws Exception {
         if (valor <= 0)
@@ -64,14 +40,5 @@ public abstract class Conta {
                 System.out.println(ex.getMessage());
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                "agencia='" + agencia + '\'' +
-                ", conta='" + conta + '\'' +
-                ", saldo=" + saldo +
-                '}';
     }
 }

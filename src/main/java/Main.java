@@ -8,7 +8,7 @@ public class Main {
         System.out.println(c2);
         c1.depositar(100d);
         System.out.println(c1);
-        c1.transferir(c2, 50d);
+        c1.transferir(c2, 89d);
         System.out.println("Conta 1: " + c1);
         System.out.println("Conta 2: " + c2);
     }
